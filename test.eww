@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\..\Src\Apps\build\iar\Apps.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\Test\board\board.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\Src\Device\build\iar\Device.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\Src\userLib\build\iar\userLib.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Test_Debug</name>
+      <member>
+        <project>userLib</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>Device</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>Apps</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>Bat</name>
+      <member>
+        <project>Apps</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

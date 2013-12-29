@@ -1,0 +1,39 @@
+{
+    "comment" : "Command format: iarbuild project.ewp [-clean|-build|-make] <configuration> [-log errors|warnings|info|all]",
+
+    "cpunum" : 2,
+
+    "exe" :
+    	{
+    	    "comment" : "iarbuild path",
+    	    "path": ""
+    	},
+
+    "eww" :
+        {
+            "comment" : "work dir, equal to $WS_DIR$. To parse .eww file to search used .ewp files.",
+            "path": "test.eww"
+        },
+
+    "ewp" :
+        {
+        	"comment": "To determine .ewp build order. \r\n 1. pre will be build first and one by one before parall. \r\n 2. post will be build one by one after parall. \r\n 3. parall will be build parall. \r\n 4. except will not be build. \r\nExcept the list, if parall is empty, will be build as parall, if not empty will not be build. \r\nCan't find in .eww, will not be build.",
+        	"pre": ["bsp", "psp", "Usb Device", "UsbHost", "mfs", "NandFlash_UFFS", "userLib", "Device", "Function", "uCGUI", "Framework"],
+        	"parall": [],
+            "post": ["Apps"],
+            "except":["board"]
+        },
+
+    "cfg" :
+        {
+        	"comment" : "<configuration> Debug or Release, default is Debug",
+            "ver":""
+    	},
+
+    "option":
+        {
+        	"comment": "proc [-clean|-build|-make], default is -make. log [errors|warnings|info|all], default is errors.",
+        	"proc":"-build",
+            "log":""
+        }
+}
